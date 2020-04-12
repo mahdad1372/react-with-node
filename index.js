@@ -25,7 +25,7 @@ if(process.env.NODE_ENV === 'production') {
 
 app.listen(5000 , () => console.log('App is running on port 5000'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task-manager');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://mahdad:<2281488055>@mycluster-fjy7k.mongodb.net/test?retryWrites=true&w=majority');
 
 // mongoose.connect ('mongodb://127.0.0.1:27017/task-manager', {
 //     useNewUrlParser : true ,
