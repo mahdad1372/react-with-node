@@ -23,15 +23,17 @@ if(process.env.NODE_ENV === 'production') {
     });
 }
 
-app.listen(5000 , () => console.log('App is running on port 5000')); 
+app.listen(5000 , () => console.log('App is running on port 5000'));
 
-mongoose.connect ('mongodb://127.0.0.1:27017/task-manager', {
-    useNewUrlParser : true ,
-    useCreateIndex : true
-}, (err) => {
-    if(!err){
-        console.log('Data base has connected successfully');
-    }else{
-        console.log('Sorry you are not connected to the database');
-    }
-})
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/task-manager');
+
+// mongoose.connect ('mongodb://127.0.0.1:27017/task-manager', {
+//     useNewUrlParser : true ,
+//     useCreateIndex : true
+// }, (err) => {
+//     if(!err){
+//         console.log('Data base has connected successfully');
+//     }else{
+//         console.log('Sorry you are not connected to the database');
+//     }
+// })
